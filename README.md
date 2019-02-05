@@ -41,7 +41,7 @@ The code contains two more independent packages:
     1.8 or above (the software was tested using the version 1.8.0_181).
 
   - Maven:
-    Tested with version 3.6.0.
+    tested with version 3.6.0.
 
 	
   Installation
