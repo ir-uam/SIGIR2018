@@ -11,7 +11,7 @@ The software produces the results displayed in figures 3, 5 and 6 in the paper.
   -----------
   
   This code contains two main modules:
-- **Module 1:** MonteCarlo computation of the integral described in section 5.3 of the paper, producing the results displayed in Figure 3. 
+- **Module 1:** Monte Carlo computation of the integral described in section 5.3 of the paper, producing the results displayed in Figure 3. 
   
   The module includes the following packages:
     - `es.uam.ir.distribution`: classes to represent values of key conditional probabilities for simulated items.
