@@ -1,16 +1,16 @@
   UAM IR team at SIGIR 2018
   ------------------------
 
-  This project contains the code needed to reproduce the experiments of the paper: 
+  This repository contains the code and data needed to reproduce the experiments of the paper: 
   
 > R. Cañamares, [P. Castells](http://ir.ii.uam.es/castells/). [Should I Follow the Crowd? A Probabilistic Analysis of the Effectiveness of Popularity in Recommender Systems](http://ir.ii.uam.es/pubs/sigir2018.pdf). 41st Annual International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2018). Ann Arbor, Michigan, USA, July 2018, pp. 415-424
 
 The software produces the results displayed in figures 3, 5 and 6 in the paper.
   
-  Description
-  -----------
+  Software description
+  --------------------
   
-  This code contains two main modules:
+  The code contains two main modules:
 - **Module 1:** Monte Carlo computation of the integral described in section 5.3 of the paper, producing the results displayed in Figure 3. 
   
   The module includes the following packages:
@@ -18,7 +18,7 @@ The software produces the results displayed in figures 3, 5 and 6 in the paper.
     - `es.uam.ir.integration`: primary method to numerically integrate the expected precision by Monte Carlo.
     - `es.uam.ir.integration.metric`: classes that sample values for the key probabilities for simulated items and compute the expected value of P@1 (observed and true) for given recommenders.
     - `es.uam.ir.recommender`: classes that rank simulated items according to the probabilistic version of the ranking function of different non-personalized recommendation criteria (random, popularity, average rating and optimal oracle rankings).
-- **Module 2:** Computation of the metrics P@1 and nDCG@10 (true and observed versions) as reported in sections 6.2 and 6.3 of the paper. For section 6.2, randomized versions of the crowdsourced dataset ([CM100k](http://ir.ii.uam.es/cm100k)) are generated recreating different independence assumptions, on which non-personalized recommenders are compared: random, popularity, average rating and the optimal rankings, producing the results displayed in Figure 5 (along with basic results for MovieLens 1M). For section 6.3, normalized and non-normalized kNN variants are run on the MovieLens 1M and CM100k datasets. 
+- **Module 2:** Computation of the metrics P@1 and nDCG@10 (true and observed versions) as reported in sections 6.2 and 6.3 of the paper. For section 6.2, randomized versions of the crowdsourced dataset ([CM100k](http://ir.ii.uam.es/cm100k)) are generated recreating different independence assumptions, on which non-personalized recommenders are compared: random, popularity, average rating and the optimal rankings, producing the results displayed in Figure 5 (along with basic results for MovieLens 1M). For section 6.3, normalized and non-normalized kNN variants are run on the [MovieLens 1M](https://grouplens.org/datasets/movielens/1m) and [CM100k](http://ir.ii.uam.es/cm100k) datasets. 
   
   The module includes the following packages:
     - `es.uam.ir.crossvalidation`: classes to reproduce a cross-validation split.
@@ -34,6 +34,11 @@ The code contains two more independent packages:
   - `es.uam.ir.util`: just includes a timing class. 
   
   
+  Datasets
+  --------
+  
+  The repository includes for convenience a copy of the datasets used in the paper, that are needed for the reproduction of the experiments. These include the [CM100k](http://ir.ii.uam.es/cm100k) (which was released as part of the contribution of the paper) and [MovieLens 1M](https://grouplens.org/datasets/movielens/1m) datasets.
+
   System Requirements
   -------------------
 
