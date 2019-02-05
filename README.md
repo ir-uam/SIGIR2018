@@ -24,10 +24,10 @@ The software produces the results displayed in figures 3, 5 and 6 in the paper.
     - `es.uam.ir.crossvalidation`: classes to reproduce a cross-validation split.
     - `es.uam.ir.datagenerator`: classes to manipulate the data and generate the different scenarios of section 6.2.
   
-    The module uses the [ranksys](http://ranksys.org/) library, and extends some of its classes. Our extensions are located in the following packages:
-  	- `es.uam.ir.ranksys.fast.preference`: ranksys extension that allows the join of several files (the folds of the cross-validation).  
-	- `es.uam.ir.ranksys.nn.user`: ranksys extension that includes normalized user-based kNN variants.
-	- `es.uam.ir.ranksys.rec.fast.basic`: ranksys extension that includes the implementation of average rating, relevant popularity and the optimal rankings.
+    The module uses the [RankSys](http://ranksys.org/) library, and extends some of its classes. Our extensions are located in the following packages:
+  	- `es.uam.ir.ranksys.fast.preference`: extension of RankSys user preference data structures to support the concatenation of several files containing user ratings (the training folds of the cross-validation).
+	- `es.uam.ir.ranksys.nn.user`: extension of RankSys implementations of kNN collaborative filtering, adding normalized user-based variants.
+	- `es.uam.ir.ranksys.rec.fast.basic`: extension of RankSys implementations of non-personalized recommendation, adding the implementation of average rating, relevant popularity and the optimal rankings.
 
 The code contains two more independent packages:
   - `es.uam.ir.sigir2018`: this package contains the specific top-level classes to generate each figure (`Figure3.java`, `Figure5.java` and `Figure6.java`) and a `Main` class calling all three of them.
@@ -37,7 +37,7 @@ The code contains two more independent packages:
   System Requirements
   -------------------
 
-  - JDK:
+  - Java JDK:
     1.8 or above (the software was tested using the version 1.8.0_181).
 
   - Maven:
