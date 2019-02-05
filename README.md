@@ -51,7 +51,7 @@ The code contains two more independent packages:
   
   From the root folder run the command: 
   
-    mvn package
+    mvn compile assembly::single
     
   
   Execution
