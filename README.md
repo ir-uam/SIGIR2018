@@ -41,7 +41,7 @@ The code contains two more independent packages:
     1.8 or above (the software was tested using the version 1.8.0_181).
 
   - Maven:
-    Tested with version 3.6.0
+    Tested with version 3.6.0.
 
 	
   Installation
@@ -144,4 +144,4 @@ The code contains two more independent packages:
   
     mvn javadoc:javadoc
   
-  Documentation will be generated in the folder `target/site`.  
+  The documentation will be generated in the folder `target/site`.  
