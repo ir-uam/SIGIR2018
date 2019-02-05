@@ -18,7 +18,7 @@ The software produces the results displayed in figures 3, 5 and 6 in the paper.
     - `es.uam.ir.integration`: primary method to numerically integrate the expected precision by Monte Carlo.
     - `es.uam.ir.integration.metric`: classes that sample values for the key probabilities for simulated items and compute the expected value of P@1 (observed and true) for given recommenders.
     - `es.uam.ir.recommender`: classes that rank simulated items according to the probabilistic version of the ranking function of different non-personalized recommendation criteria (random, popularity, average rating and optimal oracle rankings).
-- **Module 2:** Computation of the metrics P@1 and nDCG@10 (true and observed versions) as reported in sections 6.2 and 6.3 of the paper. For section 6.2, randomized versions of the crowdsourced dataset ([CM100k](http://ir.ii.uam.es/cm100k)) are generated recreating different independence assumptions, on which non-personalized recommenders are compared: random, popularity, average rating and the optimal rankings, producing the results displayed in Figure 5 (along with basic results for MovieLens 1M). For section 6.3, normalized and non-normalized kNN variants are run on the [MovieLens 1M](https://grouplens.org/datasets/movielens/1m) and [CM100k](http://ir.ii.uam.es/cm100k) datasets. 
+- **Module 2:** Computation of the metrics P@1 and nDCG@10 (true and observed versions) as reported in sections 6.2 and 6.3 of the paper. For section 6.2, randomized versions of a crowdsourced dataset ([CM100k](http://ir.ii.uam.es/cm100k)) (see below "Datasets") are generated recreating different independence assumptions, on which non-personalized recommenders are compared: random, popularity, average rating and the optimal rankings, producing the results displayed in Figure 5 (along with basic results for MovieLens 1M). For section 6.3, normalized and non-normalized kNN variants are run on the [MovieLens 1M](https://grouplens.org/datasets/movielens/1m) and [CM100k](http://ir.ii.uam.es/cm100k) datasets. 
   
   The module includes the following packages:
     - `es.uam.ir.crossvalidation`: classes to reproduce a cross-validation split.
@@ -138,15 +138,3 @@ The code contains two more independent packages:
 	Recommender	Observed P@1	True P@1	Observed nDCG@10	True nDCG@10
 	Non-normalized user-based kNN	0.012084462563288198	0.01920137092139627	0.027545256200761915	0.01791544253621822
 	Normalized user-based kNN	0.006700879456540734	0.023814526504910248	0.017320576589456294	0.01837708823018656
-
-  
-		
- 
-  API documentation
-  -----------------
-	
-  To generate the api documentation run the command: 
-  
-    mvn javadoc:javadoc
-  
-  The documentation will be generated in the folder `target/site`.  
