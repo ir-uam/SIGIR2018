@@ -109,7 +109,7 @@ public class Figure6 {
          * ------------------------------ CM100k ------------------------------
          */
         double thresholdCM100k = 3;
-        System.out.println("  Running kNN on CM100k dataset... ");
+        System.out.println("  Running kNN on CM100k... ");
 
         FastPreferenceData<Long, Long>[] actualDiscoveryData = SplitSeenAndNoSeen.run(cm100kPath);
 
