@@ -75,7 +75,6 @@ public class Figure6 {
     private static final int NFOLDS = 5;
     private static final int NREPS = 10;
     private static final boolean DEBUG = false;
-    
 
     /**
      * Method to generate figure 6 of the paper:
@@ -89,7 +88,7 @@ public class Figure6 {
      * @param out
      * @throws IOException
      */
-    public static void run (PrintStream out) throws IOException {
+    public static void run(PrintStream out) throws IOException {
         Timer.start("\nStarting Figure 6 (this one will take just a few minutes)");
         String path = "./";
         String datasetsPath = path + "datasets/";
@@ -107,10 +106,10 @@ public class Figure6 {
         printObservedResults(out, resultsMovieLens1M, "");
 
         /**
-         * --------------------- Crowdsourced 100k dataset ---------------------
+         * ------------------------------ CM100k ------------------------------
          */
         double thresholdCM100k = 3;
-        System.out.println("  Running kNN on Crowdsourced 100k dataset... ");
+        System.out.println("  Running kNN on CM100k dataset... ");
 
         FastPreferenceData<Long, Long>[] actualDiscoveryData = SplitSeenAndNoSeen.run(cm100kPath);
 
@@ -122,9 +121,9 @@ public class Figure6 {
             });
         }
         resultsCM100KActualDiscovery.forEach((recName, values) -> values.replaceAll((metric, value) -> value / NREPS));
-        out.println("\nCrowdsourced 100k");
+        out.println("\nCM100k");
         printObservedAndTrueResults(out, resultsCM100KActualDiscovery, "");
-        
+
     }
 
     private static Map<String, Map<String, Double>> processObservedInformation(String path, double threshold) throws IOException {

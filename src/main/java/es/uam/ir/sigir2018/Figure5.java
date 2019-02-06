@@ -72,7 +72,6 @@ import es.uam.ir.util.Timer;
  */
 public class Figure5 {
 
-    
     private static final int NFOLDS = 5;
     private static final int NREPS = 10;
     private static final boolean DEBUG = false;
@@ -101,17 +100,17 @@ public class Figure5 {
          * --------------------------- MovieLens 1M ---------------------------
          */
         double thresholdML1M = 4;
-        System.out.println("  Running non-personalized recommendation on MovieLens 1M... ");
+        System.out.println("  Running non-personalized recommendations on MovieLens 1M... ");
         Map<String, Map<String, Double>> resultsMovieLens1M = processObservedInformation(ml1mPath, thresholdML1M);
         out.println("MovieLens 1M");
         printObservedResults(out, resultsMovieLens1M, "");
 
         /**
-         * -------------- Crowdsourced 100k dataset - All ratings --------------
+         * ----------------------- CM100k - All ratings -----------------------
          */
-        out.println("\nCrowdsourced 100k dataset");
+        out.println("\nCM100k");
         double thresholdCM100k = 3;
-        System.out.println("  Running non-personalized recommendation on Crowdsourced 100k dataset...\n     a) All ratings ");
+        System.out.println("  Running non-personalized recommendations on CM100k...\n     a) All ratings ");
         Map<String, Map<String, Double>> resultsCM100KAllRatings = processObservedInformation(cm100kPath, thresholdCM100k);
         for (int rep = 1; rep < NREPS; rep++) {
             Map<String, Map<String, Double>> results = processObservedInformation(cm100kPath, thresholdCM100k);
@@ -124,9 +123,9 @@ public class Figure5 {
         printObservedResults(out, resultsCM100KAllRatings, "\na) All ratings");
 
         /**
-         * -- Crowdsourced 100k dataset - Actual discovery (mixed dependency) --
+         * ----------- CM100k - Actual discovery (mixed dependencies) -----------
          */
-        System.out.println("     b) Actual discovery (mixed dependency) ");
+        System.out.println("     b) Actual discovery (mixed dependencies) ");
 
         FastPreferenceData<Long, Long>[] actualDiscoveryData = SplitSeenAndNoSeen.run(cm100kPath);
 
@@ -138,10 +137,10 @@ public class Figure5 {
             });
         }
         resultsCM100KActualDiscovery.forEach((recName, values) -> values.replaceAll((metric, value) -> value / NREPS));
-        printObservedAndTrueResults(out, resultsCM100KActualDiscovery, "\nb) Actual discovery (mixed dependency)");
+        printObservedAndTrueResults(out, resultsCM100KActualDiscovery, "\nb) Actual discovery (mixed dependencies)");
 
         /**
-         * ---- Crowdsourced 100k dataset - Relevance-independent discovery ----
+         * ------------- CM100k - Relevance-independent discovery -------------
          */
         System.out.println("     c) Relevance-independent discovery ");
 
@@ -162,7 +161,7 @@ public class Figure5 {
         printObservedAndTrueResults(out, resultsCM100KRelevanceIndependent, "\nc) Relevance-independent discovery");
 
         /**
-         * ------ Crowdsourced 100k dataset - Item-independent discovery ------
+         * --------------- CM100k - Item-independent discovery ---------------
          */
         System.out.println("     d) Item-independent discovery ");
 
@@ -181,7 +180,7 @@ public class Figure5 {
         }
         resultsCM100KItemIndependent.forEach((recName, values) -> values.replaceAll((metric, value) -> value / NREPS));
         printObservedAndTrueResults(out, resultsCM100KItemIndependent, "\nd) Item-independent discovery");
-        
+
     }
 
     private static Map<String, Map<String, Double>> processObservedInformation(String path, double threshold) throws IOException {
