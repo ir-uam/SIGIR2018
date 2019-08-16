@@ -3,7 +3,7 @@
 
   This repository contains the code and data needed to reproduce the experiments of the paper: 
   
-> R. Cañamares, [P. Castells](http://ir.ii.uam.es/castells/). [Should I Follow the Crowd? A Probabilistic Analysis of the Effectiveness of Popularity in Recommender Systems](http://ir.ii.uam.es/pubs/sigir2018.pdf). 41st Annual International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2018). Ann Arbor, Michigan, USA, July 2018, pp. 415-424
+> R. Cañamares, [P. Castells](http://ir.ii.uam.es/castells). [Should I Follow the Crowd? A Probabilistic Analysis of the Effectiveness of Popularity in Recommender Systems](http://ir.ii.uam.es/pubs/sigir2018.pdf). 41st Annual International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2018). Ann Arbor, Michigan, USA, July 2018, pp. 415-424
 
 The software produces the results displayed in figures 3, 5 and 6 in the paper.
   
